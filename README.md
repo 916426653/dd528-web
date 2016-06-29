@@ -7,7 +7,7 @@
 ###### 为便于webstorm中使用、运营项目内代码，也便于阅读源码，将整体git库创建为单项目
 ###### 需要独立的项目定义为模块，使用node搭建整个的框架
 ### node文档结构说明
-见[doc中README.md](./doc)
+ 见[doc中README.md](./doc)
 ## 涉及模块
 * JavaScript
 * css3

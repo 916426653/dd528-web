@@ -6,9 +6,16 @@
   "description": "店达信息web前端开发组开源项目库",
   "repository": "https://github.com/occultskyrong/dd528-web",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "log4js": "^0.6.37",
+    "serve-favicon": "^2.3.0"
   },
-  "devDependencies": {
-  },
-  "scripts": {
-  }
+  "devDependencies": {},
+  "scripts": {}
 }

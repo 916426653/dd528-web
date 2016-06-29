@@ -4,3 +4,9 @@
 # Ignore node modules
 node_modules
 
+# Ignore copy file
+*.copy.js
+
+# Ignore log file
+*.log.*
+*.log

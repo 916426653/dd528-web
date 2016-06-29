@@ -4,3 +4,20 @@
  */
 
 "use strict";
+
+//配置信息
+module.exports = {
+    title: ''
+    , development: {
+        sys: {
+            port: 3000 //监听的端口
+            , cluster: 1 //使用的进程数量
+        }
+        , redis: {
+            "host": "192.168.1.101",
+            "port": 6379,
+            "db": 13,
+            "ttl": 86000
+        }
+    }, production: {}
+};
