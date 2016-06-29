@@ -5,6 +5,7 @@
 
 ## 项目运行说明
 * git clone 本项目
+* config文件夹中更改redis的配置，安装并启动redis
 * 安装node、npm，cd到本项目路径下，执行npm install
 * 使用node或者pm2、forever等启动器运行app.js
 
