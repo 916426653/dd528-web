@@ -1,0 +1,14 @@
+{
+  "name": "dd528_web",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "description": "店达信息web前端开发组开源项目库",
+  "repository": "https://github.com/occultskyrong/dd528-web",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  }
+}
