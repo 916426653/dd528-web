@@ -8,5 +8,3 @@ node_modules
 *.copy.js
 
 # Ignore log file
-*.log.*
-*.log
