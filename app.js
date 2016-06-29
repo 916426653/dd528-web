@@ -45,6 +45,7 @@ app.use(bodyParser.urlencoded({extended: true}));//定义url编码方式
 app.use(cookieParser());//定义cookie解析器
 app.use(express.static(path.join(__dirname, 'public')));//定义静态文件目录
 app.use(flash());//使用flash缓存
+
 //加载路由控制
 app.use('/', require('./router'));
 
@@ -53,7 +54,7 @@ app.use(session({//连接redis
     store: new RedisStore(config["redis"]),
     resave: false,
     saveUninitialized: true,
-    secret: 'statistics_server'
+    secret: 'dd528_web'
 }));
 
 //拦截所有请求，生成访问日志
@@ -63,7 +64,6 @@ app.use(function (err, req, res, next) {
         logger.Logger('ERROR').error(JSON.stringify({error: error}));
     } else {
         dweb.info("cluster:" + cluster.worker.id
-            // + ",    sid:" + ("store" in req.session && req.session.store.id || -1)
             + ",    ip:" + getClientAddress(req)
             + ",    url:" + req.url
             + ",    method:" + req.method
@@ -77,7 +77,8 @@ app.use(function (err, req, res, next) {
         return (req.headers['x-forwarded-for'] || '').split(',')[0] || req.connection.remoteAddress;
     }
 });
-//todo error拦截
+
+//todo 404拦截
 
 //使用cluster启动、监听端口
 if (cluster.isMaster) {//是否为主进程

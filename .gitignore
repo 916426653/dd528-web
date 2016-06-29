@@ -9,3 +9,6 @@ node_modules
 
 # Ignore log file
 logs
+
+# Ignore .ignore file
+*.ignore.js
