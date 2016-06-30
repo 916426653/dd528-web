@@ -2,8 +2,41 @@
 <%- include ../_base/css.ejs %>
 <%- include ../_base/container.ejs %>
 <%- include ../_base/header.ejs %>
-    <div class="app-context">
-
+<div class="app-context container">
+    <div class="col-lg-12">
+        <div class="row content-main">
+            <div class="col-md-8" title="更新日志">
+                <div class="panel panel-info">
+                    <div class="panel-heading">更新日志</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12" id="history_content"></div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">Powered by
+                        <a target="_blank" href="./static/history.json">history.json</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading">技术</div>
+                    <div class="panel-body">Sass</div>
+                    <div class="panel-footer">Used Html5</div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h4>瞭望塔</h4></div>
+                    <div class="panel-body">。。。</div>
+                    <div class="panel-footer">Powered by
+                        <a target="_blank" href="./static/future.json">future.json</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+</div>
 <%- include ../_base/javascript.ejs %>
 <%- include ../_base/footer.ejs %>
