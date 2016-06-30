@@ -2,12 +2,12 @@
 ## 1.file watcher
 
 #### 2.1 SASS的设置
-##### 2.1.1 [Arguments]
+##### 2.1.1 Arguments
 ```
 --no-cache --style compressed --update $FileName$:$ProjectFileDir$\public\stylesheets\css\$FileDirPathFromParent(scss)$$FileNameWithoutExtension$.css
 ```
 
-##### 2.1.2 [Output paths to refresh]
+##### 2.1.2 Output paths to refresh
 ```
 $ProjectFileDir$\public\stylesheets\css\$FileDirPathFromParent(scss)$$FileNameWithoutExtension$.css
 ```
