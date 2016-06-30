@@ -17,7 +17,7 @@ $ProjectFileDir$\public\stylesheets\css\$FileDirPathFromParent(scss)$$FileNameWi
 ##### 2.2.0 参考[给WebStorm添加FileWatcher支持Browserify](http://blog.meathill.com/tech/devtools/add-file-watcher-for-webstorm-to-support-browserify.html)
 
 ##### 2.2.1 Scope 设置为dd528_web
-  * 应将需要链入的index.js单个去include
+  * 应将需要链入的index.js单个include到scope的目录中
   
 ##### 2.2.2 Arguments
 ```
