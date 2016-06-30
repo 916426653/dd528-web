@@ -46,9 +46,6 @@ app.use(cookieParser());//定义cookie解析器
 app.use(express.static(path.join(__dirname, 'public')));//定义静态文件目录
 app.use(flash());//使用flash缓存
 
-//加载路由控制
-app.use('/', require('./router'));
-
 //设置session
 app.use(session({//连接redis
     store: new RedisStore(config["redis"]),
@@ -57,20 +54,14 @@ app.use(session({//连接redis
     secret: 'dd528_web'
 }));
 
-//拦截所有请求，生成访问日志
-app.use(function (err, req, res, next) {
-    if (err) {//错误日志
-        var error = {method: req.method, url: req.originalUrl, message: err.message, stack: err.stack};
-        logger.Logger('ERROR').error(JSON.stringify({error: error}));
-    } else {
-        dweb.info("cluster:" + cluster.worker.id
-            + ",    ip:" + getClientAddress(req)
-            + ",    url:" + req.url
-            + ",    method:" + req.method
-            + ",    queries:" + JSON.stringify(req.query)
-            + ",    body:" + JSON.stringify(req.body)
-            + ",    error:" + JSON.stringify(err));
-    }
+//拦截请求，生成http日志
+app.use(function (req, res, next) {
+    dweb.info("cluster:" + cluster.worker.id
+        + ",    ip:" + getClientAddress(req)
+        + ",    url:" + req.url
+        + ",    method:" + req.method
+        + ",    queries:" + JSON.stringify(req.query)
+        + ",    body:" + JSON.stringify(req.body));
     next();
     //nginx转发后获取实际IP信息
     function getClientAddress(req) {
@@ -78,7 +69,37 @@ app.use(function (err, req, res, next) {
     }
 });
 
-//todo 404拦截
+//加载路由控制
+app.use('/', require('./router'));
+
+
+//拦截所有的结果，如果是错误写入日志
+app.use(function (err, req, res, next) {
+    if (err) {
+        var error = {method: req.method, url: req.originalUrl, message: err.message, stack: err.stack};
+        dweb.error(JSON.stringify({error: error}));
+    }
+    //开发者模式下调用error2Handler
+    if ('development' === app.get('env')) {
+        errorHandler()(err, req, res, next);
+    } else {
+        res.json({
+            tag: "error",
+            error: err.status
+        })
+    }
+});
+
+//404错误处理
+app.use(function (req, res) {
+    dweb.error(req.method, req.originalUrl, " 404");
+    var err = new Error('Not Found');
+    err.status = 404;
+    res.render('./error.ejs', {
+        tag: "error",
+        error: err
+    });
+});
 
 //使用cluster启动、监听端口
 if (cluster.isMaster) {//是否为主进程

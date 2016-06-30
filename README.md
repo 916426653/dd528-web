@@ -27,3 +27,4 @@ MIT
 
 ## 特此感谢(排名不分先后)
 * [Node.js 中文技术社区Cnode](http://cnodejs.org/)，git地址[https://github.com/cnodejs/nodeclub](https://github.com/cnodejs/nodeclub)
+* [BootCDN](http://www.bootcdn.cn/)

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>发生错误</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <% if(error){ %>
+    <h1>请求发生错误</h1>
+    <%= error %>
+    <% } %>
+</div>
+</body>
+</html>
