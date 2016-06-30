@@ -7,4 +7,11 @@
 
 var router = require('express').Router();
 
-module.exports=router;
+//css3 - 首页
+router.get('/', function (req, res) {
+    res.render('./css3/home/view', {
+        title: 'css3-首页'
+    });
+});
+
+module.exports = router;

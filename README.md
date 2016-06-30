@@ -20,6 +20,7 @@
 * css3
 * html5
 * nodeJS
+
 ### 待开发技术模块清单，详见[doc/static/future.json](./doc/static/future.json)
 
 ## 8.License

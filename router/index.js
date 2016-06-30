@@ -16,7 +16,16 @@ router.get('/', function (req, res) {
 //—————— 分模块路由 ——————
 router.use('/css3',require('./css3'));
 router.use('/javascript',require('./javascript'));
+
+//-- 登录
+router.use('/login',require('./login'));
+
 //—————— 需要登录的路由 ————
+//拦截所有请求
+router.use(function (req, res, next) {
+    //转向登录页
+    return res.redirect('/login');
+});
 router.use('/dianda',require('./dianda'));
 
 module.exports = router;
