@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,YAAY,CACV,UAAU,CAAC,IAAI",
+"sources": ["../../scss/component/frame.scss"],
+"names": [],
+"file": "home.web.css"
+}
