@@ -11,4 +11,3 @@ node_modules
 logs
 
 # Ignore .ignore file
-*.ignore.js
