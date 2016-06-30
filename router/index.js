@@ -7,11 +7,16 @@
 
 var router = require('express').Router();
 
-//todo 路由加载
+//路由 - 首页
 router.get('/', function (req, res) {
-    res.render('./home', {
+    res.render('./home/view', {
         title:'首页'
     });
 });
+//—————— 分模块路由 ——————
+router.use('/css3',require('./css3'));
+router.use('/javascript',require('./javascript'));
+//—————— 需要登录的路由 ————
+router.use('/dianda',require('./dianda'));
 
 module.exports = router;
