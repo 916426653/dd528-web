@@ -23,7 +23,7 @@
 * 
 
 ## 8.License
-* MIT,具体License内容参见[LICENSE](../LICENSE)
+* MIT,具体License内容参见[LICENSE](./LICENSE)
 * 本项目非商业项目，纯属分享和学习使用，无需有偿使用。
 * 遵循开源精神：任何人可随意copy，但因代码copy造成的一切后果和损失，本项目不承担任何责任
 
