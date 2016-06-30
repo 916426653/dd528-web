@@ -23,7 +23,9 @@
 * 
 
 ## 8.License
-MIT
+* MIT
+* 本项目非商业项目，纯属分享和学习使用，无需有偿使用。
+* 遵循开源精神：任何人可随意copy，但因代码copy造成的一切后果和损失，本项目不承担任何责任
 
 ## 9.特此感谢(排名不分先后)
 * [Node.js 中文技术社区Cnode](http://cnodejs.org/)，git地址[https://github.com/cnodejs/nodeclub](https://github.com/cnodejs/nodeclub)
