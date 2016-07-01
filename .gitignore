@@ -13,3 +13,5 @@ logs
 # Ignore config file
 *.ignore.js
 config/index.js
+views/dianda
+
