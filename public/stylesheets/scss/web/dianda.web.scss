@@ -1,5 +1,17 @@
 /**
  * Created by zrz on 2016/6/30.
  */
-
 @import "../component/frame";
+
+.container-page {
+  height: 100%;
+  @mixin page-bg($num:1) {
+    $imagePath: "/image/background/bg" +$num+ ".jpg";
+    background-image: url($imagePath);
+  }
+  @for $i from 1 through 4 { //循环生成4个page-bg
+    .page-bg#{$i} {
+      @include page-bg($i);
+    }
+  }
+}

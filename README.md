@@ -29,5 +29,9 @@
 * 遵循开源精神：任何人可随意copy，但因代码copy造成的一切后果和损失，本项目不承担任何责任
 
 ## 9.特此感谢(排名不分先后)
-* [Node.js 中文技术社区Cnode](http://cnodejs.org/)，git地址[https://github.com/cnodejs/nodeclub](https://github.com/cnodejs/nodeclub)
-* [BootCDN](http://www.bootcdn.cn/)
+* CNode社区的技术文档[Node.js 中文技术社区CNode](http://cnodejs.org/)，git地址[https://github.com/cnodejs/nodeclub](https://github.com/cnodejs/nodeclub)
+* 提供CDN服务的[BootCDN](http://www.bootcdn.cn/)
+
+* jQuery插件[fullPage.js](https://github.com/alvarotrigo/fullPage.js)
+
+* SASS技术[官方网站](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)、[中文入门教程](http://www.w3cplus.com/sassguide/syntax.html)

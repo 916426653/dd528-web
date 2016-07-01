@@ -5,8 +5,8 @@
 
 "use strict";
 
-module.exports={
-  user:{
-      'test':"12345678"
-  }
+module.exports = {
+    user: {
+        'test': "12345678"
+    }
 };

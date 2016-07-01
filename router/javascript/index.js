@@ -7,4 +7,10 @@
 
 var router = require('express').Router();
 
-module.exports=router;
+router.get('/', function (req, res) {
+    res.render('./javascript/home/view', {
+        title: 'JavaScript - Index'
+    });
+});
+
+module.exports = router;

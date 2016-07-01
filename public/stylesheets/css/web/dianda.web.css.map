@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAIA,YAAa,CACX,UAAU,CAAE,IAAI",
-"sources": ["../../scss/component/frame.scss"],
+"mappings": "AAIA,YAAa,CACX,UAAU,CAAE,IAAI,CCAlB,eAAgB,CACd,MAAM,CAAE,IAAI,CAMV,yBAAc,CAHd,gBAAgB,CAAE,gCAAe,CAGjC,yBAAc,CAHd,gBAAgB,CAAE,gCAAe,CAGjC,yBAAc,CAHd,gBAAgB,CAAE,gCAAe,CAGjC,yBAAc,CAHd,gBAAgB,CAAE,gCAAe",
+"sources": ["../../scss/component/frame.scss","../../scss/web/dianda.web.scss"],
 "names": [],
 "file": "dianda.web.css"
 }

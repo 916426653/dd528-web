@@ -14,4 +14,11 @@ router.get('/', function (req, res) {
     });
 });
 
+//coder - 入职说明
+router.get('/entry', function (req, res) {
+    res.render('./dianda/entry/view', {
+        title: '入职说明-技术'
+    });
+});
+
 module.exports = router;
