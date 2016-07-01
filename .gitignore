@@ -10,5 +10,6 @@ node_modules
 # Ignore log file
 logs
 
-# Ignore .ignore file
+# Ignore config file
 *.ignore.js
+config/index.js
