@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,YAAa,CACX,UAAU,CAAE,IAAI",
+"sources": ["../../scss/component/frame.scss"],
+"names": [],
+"file": "dianda.web.css"
+}

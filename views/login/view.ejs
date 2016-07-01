@@ -4,8 +4,12 @@
 <%- include ../_base/container.ejs %>
 <%- include ../_base/header.ejs %>
 <div class="app-context container">
-    <form>
-
+    <form action="/login" method="post">
+        <label for="uid">用户名</label>
+        <input type="text" id="uid" name="uid" value="test">
+        <label for="pwd">密码</label>
+        <input type="password" id="pwd" name="pwd" value="12345678">
+        <button type="submit">登录</button>
     </form>
 </div>
 <%- include ../_base/javascript.ejs %>

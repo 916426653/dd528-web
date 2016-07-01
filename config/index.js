@@ -14,7 +14,7 @@ module.exports = {
             , cluster: 1 //使用的进程数量
         }
         , redis: {
-            "host": "192.168.1.101",
+            "host": "localhost",
             "port": 6379,
             "db": 13,
             "ttl": 86000

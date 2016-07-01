@@ -7,4 +7,11 @@
 
 var router = require('express').Router();
 
+//coder - 首页
+router.get('/', function (req, res) {
+    res.render('./dianda/home/view', {
+        title: '前端开发人员'
+    });
+});
+
 module.exports = router;
