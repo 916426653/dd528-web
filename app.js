@@ -12,6 +12,7 @@ var express = require('express')
     , cluster = require('cluster') //多进程
     , flash = require('connect-flash')
     , session = require("express-session")
+    , errorHandler = require("errorhandler")
     , bodyParser = require('body-parser')
     , cookieParser = require('cookie-parser')
     , RedisStore = require('connect-redis')(session)
