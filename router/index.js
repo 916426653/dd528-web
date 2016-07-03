@@ -13,7 +13,9 @@ router.get('/', function (req, res) {
         title: '首页'
     });
 });
-//—————— 分模块路由 ——————
+//—————— 基础模块路由 ——————
+router.use('/future',require('./future'));//瞭望塔：技术前瞻
+//—————— 技术模块路由 ——————
 router.use('/css3', require('./css3'));
 router.use('/javascript', require('./javascript'));
 

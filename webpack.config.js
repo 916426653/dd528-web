@@ -15,6 +15,7 @@ var webpack = require('webpack')
 module.exports = {
     entry: {    //输入文件
         "dianda/entry": baseUrl.web_url + '/dianda/entry'
+        ,"future": baseUrl.web_url + '/future'
     },
     output: {//输出文件
         path: path.join(__dirname, "./public/src"),//主目录
