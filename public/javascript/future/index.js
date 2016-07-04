@@ -4,3 +4,17 @@
  */
 
 "use strict";
+
+require('../_base/datatables.js');
+
+var Future = (function () {
+    var listener = require('./listener').Listener;
+    var run = function () {
+        listener.init();
+    };
+    return {
+        run: run
+    }
+}());
+
+Future.run();

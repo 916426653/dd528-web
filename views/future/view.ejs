@@ -1,5 +1,6 @@
 <%- include ../_base/head.ejs %>
 <%- include ../_base/css.ejs %>
+<%- include ../_base/datatables.css.ejs %>
 <link rel="stylesheet" href="/stylesheets/css/web/future.web.css">
 <%- include ../_base/container.ejs %>
 <%- include ../_base/header.ejs %>
@@ -16,9 +17,11 @@
             </h5>
         </div>
         <div class="col-md-12">
-            <table class="" id="future_element"></table>
+            <table class="" id="future_list"></table>
         </div>
     </div>
 </div>
 <%- include ../_base/javascript.ejs %>
+<%- include ../_base/datatables.js.ejs %>
+<script src="/src/future.web.min.js" charset="utf-8"></script>
 <%- include ../_base/footer.ejs %>
