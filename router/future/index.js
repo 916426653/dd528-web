@@ -11,6 +11,7 @@ var router = require('express').Router();
 router.get('/', function (req, res) {
     res.render('./future/view', {
         title: '瞭望塔 - 首页'
+        , tech: ['DataTables', 'SUI']
     });
 });
 

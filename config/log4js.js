@@ -22,10 +22,6 @@ module.exports = {
                     "maxLogSize": 10485760,
                     "numBackups": 3
                 }, {
-                    "type": "file",
-                    "filename": "./logs/cluster.log",//线程日志
-                    "category": "cluster"
-                }, {
                     "type": "logLevelFilter",
                     "level": "ERROR",
                     "appender": {

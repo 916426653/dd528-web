@@ -32,7 +32,8 @@ module.exports = {//全局变量
             }
         }
         return _;
-    }, info: function () {
+    }
+    , info: function () {
         if (env != 'production') {//非生产环境均打印日志，为追踪错误
             if (arguments && arguments.length === 1) {
                 require('../logger').log4js.getLogger('http').info(arguments[0]);
@@ -40,7 +41,8 @@ module.exports = {//全局变量
                 console.info(arguments);
             }
         }
-    }, json: function (data) {//标准正确返回
+    }
+    , json: function (data) {//标准正确返回
         var _ = {
             status: 1
             , message: ''
@@ -48,7 +50,8 @@ module.exports = {//全局变量
         };
         this.info(typeof data === 'object' && JSON.stringify(data) || data);
         return _;
-    }, es: {
+    }
+    , es: {
         init: function (data) {//es返回数据的标准化
             return {
                 took: 'took' in data && data['took'] || 0        //核心耗时
@@ -64,4 +67,5 @@ module.exports = {//全局变量
             return 'hits' in data && data['hits']['total'] || 0;
         }
     }
+    , stt: require('../../public/static/technology').set //根据技术清单拼装特此感谢
 };

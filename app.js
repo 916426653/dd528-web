@@ -9,7 +9,6 @@
 var express = require('express')
     , path = require('path')
     , favicon = require('serve-favicon')
-    , cluster = require('cluster') //多进程
     , flash = require('connect-flash')
     , session = require("express-session")
     , errorHandler = require("errorhandler")
@@ -20,7 +19,6 @@ var express = require('express')
 
 //调用工具类
 var logger = require('./utils/logger') //日志类
-    , cLogger = logger.Logger('cluster')
     ;
 
 //声明全局变量
@@ -57,8 +55,7 @@ app.use(session({//连接redis
 
 //拦截请求，生成http日志
 app.use(function (req, res, next) {
-    dweb.info("cluster:" + cluster.worker.id
-        + ",    ip:" + getClientAddress(req)
+    dweb.info("ip:" + getClientAddress(req)
         + ",    url:" + req.url
         + ",    method:" + req.method
         + ",    queries:" + JSON.stringify(req.query)
@@ -102,41 +99,10 @@ app.use(function (req, res) {
     });
 });
 
-//使用cluster启动、监听端口
-if (cluster.isMaster) {//是否为主进程
-    process.title = 'dd528_web';
-    for (var c = 0; c < (config['sys']['cluster'] || 1); c++) {
-        cluster.fork();
-    }
-    //创建进程时记录
-    cluster.on('fork', function (worker) {
-        cLogger.info('fork,     worker:' + worker.id + ',     pid:' + worker.process.pid);
-    });
-    //退出进程时记录
-    cluster.on('exit', function (worker, signal, code) {
-        cLogger.fatal('exit,     worker:' + worker.id + ',     pid:' + worker.process.pid + ',     signal:' + signal + ",     code:" + code);
-        cluster.fork();
-    });
-    //监听进程时记录
-    cluster.on('listening', function (worker, address) {
-        cLogger.info("listening,    worker:" + worker.id + " ,开始监听端口：" + address.port);
-    });
-} else if (cluster.isWorker) {//
-    process.on('uncaughtException', function (error) {
-        cluster.error(error.stack);//错误栈
-        cluster.fatal({
-            tag: '--- 未被catch的异常 ---'
-            , error: error
-            , stack: error.stack
-            , message: error.message
-        })
-    });
-    if (!module.parent) {//监听端口
-        app.listen(config['sys']['port'] || 3000, function () {
-            dweb.info('dd528-web 项目启动，监听端口：' + config['sys']['port']);
-        });
-    }
-}
+//启动项目，监听3000端口
+app.listen(config['sys']['port'] || 3000, function () {
+    dweb.info('dd528-web 项目启动，监听端口：' + config['sys']['port']);
+});
 
 //抛出实例
 module.exports = app;

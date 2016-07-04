@@ -10,15 +10,10 @@ var dte;//生成的dt对象
 //抛出监听
 exports.Listener = (function () {
     var data = require('../../static/future.js');
-    var get = function () {//获取数据
-        //var _={};
-        //for (var d in data) {
-        //}
-        return data;
-    };
     var table = function () {//配置dt-table
         dte = $.initDataTables($('#future_list'), {
-            data: get()
+            data: 'data' in data && data['data'] || []
+            , serverSide: false //前端数据加载
             , columns: [
                 {title: '模块/功能名', data: 'name'}
                 , {title: '备注信息', data: 'info'}
@@ -26,7 +21,7 @@ exports.Listener = (function () {
                 , {title: '权重', data: 'weights'}
                 , {title: '复杂度', data: 'complexity'}
                 , {
-                    title: '是否结束', data: 'over', render: function (data) {
+                    title: '已结束', data: 'over', render: function (data) {
                         return data ? '是' : '否';
                     }
                 }
@@ -36,6 +31,13 @@ exports.Listener = (function () {
                     }
                 }
             ]
+            , rowCallback: function (row, data, index) {//行创建回调
+                if (data['over']) {
+                    $(row).addClass('success');
+                } else {
+                    $(row).addClass('info');
+                }
+            }
         });
     };
     var init = function () {

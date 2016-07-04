@@ -39,10 +39,20 @@
 /* position */
 .ps-r{position: relative;}
 .ps-a{position: absolute;}
+/* margin */
+@for $i from 1 through 10 {
+  $px: $i*10;
+  .ml-#{$px} {
+    margin-left: #{$px}px;
+  }
+  .ml-#{$i}e {
+    margin-left: #{$i}em;
+  }
+}
+.lst-n{list-style-type:none;}//去除li的点
+.disabled{cursor: not-allowed;pointer-events: auto !important;}//抹掉bootstrap的样式
 
-
-/*待整理*/
-.disabled{cursor: not-allowed;}
+/* —————— todo 待整理 —————— */
 a:focus{outline:none}
 .title-text{font-size:20px;font-weight:bold}
 .price-em-gray:before{content:"¥"; color:#999;}
