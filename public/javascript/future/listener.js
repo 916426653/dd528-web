@@ -17,7 +17,7 @@ exports.Listener = (function () {
         return data;
     };
     var table = function () {//配置dt-table
-        dte = $('#future_list').DataTable({
+        dte = $.initDataTables($('#future_list'), {
             data: get()
             , columns: [
                 {title: '模块/功能名', data: 'name'}
@@ -32,7 +32,7 @@ exports.Listener = (function () {
                 }
                 , {
                     title: '结束时间', data: null, render: function (data) {
-                        return 'time' in data ?new Date(data['time']) : '--';
+                        return 'time' in data ? new Date(data['time']) : '--';
                     }
                 }
             ]
