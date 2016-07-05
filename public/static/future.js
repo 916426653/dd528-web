@@ -25,7 +25,7 @@ module.exports = {
         , complexity: 5
         , over: false
     }, {
-        name: '入职说明'
+        name: '团队 - 入职说明'
         , info: '优化入职说明的体验，补充css效果'
         , reference: []
         , weights: 1
@@ -48,10 +48,17 @@ module.exports = {
         , over: false
     }, {
         name: '浏览器兼容性和屏幕分辨率提示'
-        , info: 'h5特性兼容，向上兼容分辨、最小分辨率'
+        , info: 'h5特性兼容，向上兼容分辨率、最小分辨率提示'
         , reference: []
         , weights: 1
         , complexity: 2
+        , over: false
+    }, {
+        name: '团队 - 面试题题目+答案'
+        , info: '面试题题目、对应答案，及题目的说明'
+        , reference: ['']
+        , weights: 2
+        , complexity: 4
         , over: false
     }]
 };
