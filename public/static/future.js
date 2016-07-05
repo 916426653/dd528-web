@@ -37,13 +37,21 @@ module.exports = {
         , reference: ['DataTables']
         , weights: 4
         , complexity: 4
-        , over: false
+        , over: true
+        , time: '2016-07-05 09:51:54'
     }, {
         name: '瞭望塔模块 - 样式优化'
         , info: '整体、table(完成datatables.plugin.scss)、步骤条(参照SUI，完成step.plugin.scss)样式优化'
         , reference: ['sass', 'sui']
         , weights: 1
         , complexity: 0
+        , over: false
+    }, {
+        name: '浏览器兼容性和屏幕分辨率提示'
+        , info: 'h5特性兼容，向上兼容分辨、最小分辨率'
+        , reference: []
+        , weights: 1
+        , complexity: 2
         , over: false
     }]
 };
