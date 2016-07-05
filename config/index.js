@@ -7,7 +7,7 @@
 
 //配置信息
 module.exports = {
-    title: ''
+    title: 'dd528_web'
     , development: {
         sys: {
             port: 3000 //监听的端口

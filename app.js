@@ -68,7 +68,7 @@ app.use(function (req, res, next) {
 });
 
 //加载路由控制
-app.use('/', require('./router'));
+app.use('/', require('./routes'));
 
 
 //拦截所有的结果，如果是错误写入日志

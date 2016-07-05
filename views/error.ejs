@@ -7,8 +7,8 @@
 <body>
 <div class="container">
     <% if(error){ %>
-    <h1>请求发生错误</h1>
-    <%= error %>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
     <% } %>
 </div>
 </body>
