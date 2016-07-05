@@ -71,7 +71,7 @@ module.exports = {
         }
         function setA(data, key) {
             var _class = 'class="btn btn-group btn-'
-                + (key in data && data[key] ? 'info' : 'default disabled') + '"'
+                + (key in data && data[key] ? 'primary' : 'warning disabled') + '"'
                 , name = {official: '官网', cn: '中文站', example: '举个栗子'};
             return '<a href="' + (key in data && data[key] || '###')
                 + '" role="button" ' + _class + '>' + ( key in name && name[key] || key) + '</a>';

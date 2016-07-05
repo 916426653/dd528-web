@@ -9,7 +9,8 @@ var dte;//生成的dt对象
 
 //抛出监听
 exports.Listener = (function () {
-    var data = require('../../static/future.js');
+    var data = require('../../static/future.js');//获取前瞻技术数据
+    //生成table的dt对象
     var table = function () {//配置dt-table
         dte = $.initDataTables($('#future_list'), {
             data: 'data' in data && data['data'] || []
@@ -40,8 +41,42 @@ exports.Listener = (function () {
             }
         });
     };
-    var init = function () {
+    // 生成weights的内容
+    var setWeigths = function () {
+        var str = ''
+            , weights = 'weights' in data['info'] && data['info']['weights']['data'];
+        for (var w in weights) {
+            if (weights.hasOwnProperty(w)) {
+                str += '<li class="list-group-item">' +
+                    '<span class="badge">' + w + '</span>' + weights[w] +
+                    '</li>';
+            }
+        }
+        $('#weights_list').html(str);
+    };
+    // 生成complexity的内容
+    var setComplexity = function () {
+        var str = ''
+            ,complexity='complexity' in data['info']&&data['info']['complexity']['data'];
+        for(var c in complexity){
+            if(complexity.hasOwnProperty(c)){
+                str+='<div class="step-item">' +
+                    '<div class="step-wrap">' +
+                    '<div class="step-finished">' +
+                    '<i>'+c+'</i><lable>'+complexity[c]+'</lable>' +
+                    '<i class="step-right-bg"></i>' +
+                    '<i class="step-right"></i>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
+            }
+        }
+        $('#complexity_list').html(str);
+    };
+    var init = function () {//页面初始化
         table();
+        setWeigths();
+        setComplexity();
     };
     return {
         init: init
