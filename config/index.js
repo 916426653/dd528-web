@@ -10,7 +10,7 @@ module.exports = {
     title: 'dd528_web'
     , development: {
         sys: {
-            port: 3000 //监听的端口
+            port: 80 //监听的端口
             , cluster: 1 //使用的进程数量
         }
         , redis: {
