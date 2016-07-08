@@ -10,7 +10,7 @@ module.exports = {
     title: 'dd528_web'
     , development: {
         sys: {
-            port: 80 //监听的端口
+            port: 3000 //监听的端口
             , cluster: 1 //使用的进程数量
         }
         , redis: {
@@ -19,5 +19,16 @@ module.exports = {
             "db": 13,
             "ttl": 86000
         }
-    }, production: {}
+    }, production: {
+        sys: {
+            port: 80 //监听的端口
+            , cluster: 1 //使用的进程数量
+        }
+        , redis: {
+            "host": "localhost",
+            "port": 6379,
+            "db": 13,
+            "ttl": 86000
+        }
+    }
 };
