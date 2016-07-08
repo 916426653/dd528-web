@@ -19,6 +19,7 @@ var express = require('express')
 
 //调用工具类
 var logger = require('./utils/logger') //日志类
+    ,httpLog=logger.log4js.getLogger('http')
     ;
 
 //声明全局变量
@@ -55,7 +56,7 @@ app.use(session({//连接redis
 
 //拦截请求，生成http日志
 app.use(function (req, res, next) {
-    dweb.info("ip:" + getClientAddress(req)
+    httpLog.info("ip:" + getClientAddress(req)
         + ",    url:" + req.url
         + ",    method:" + req.method
         + ",    queries:" + JSON.stringify(req.query)
@@ -101,7 +102,7 @@ app.use(function (req, res) {
 
 //启动项目，监听3000端口
 app.listen(config['sys']['port'] || 3000, function () {
-    dweb.info('dd528-web 项目启动，监听端口：' + config['sys']['port']);
+    httpLog.info('dd528-web 项目启动，监听端口：' + config['sys']['port']);
 });
 
 //抛出实例
