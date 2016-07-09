@@ -1,6 +1,6 @@
 # dd528-web
  > 店达信息所属的web前端开发项目组开源框架
- 
+ > 已部署在[sky91.cn](http://sky91.cn)
  > 店达信息旗下店达商城地址：[www.dd528.com](http://www.dd528.com)
 
 ## 1.项目运行说明
@@ -9,7 +9,6 @@
 * 安装node、npm，cd到本项目路径下，执行(c)npm install
 * 使用node或者pm2、forever等启动器运行app.js
 * 使用浏览器访问[http://localhost:3000](http://localhost:3000)
-  * 生产环境可查看[sky91.cn](sky91.cn)  
 
 ## 2.项目结构
 ###### 为便于webstorm中使用、运营项目内代码，也便于阅读源码，将整体git库创建为单项目
