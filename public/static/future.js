@@ -18,6 +18,13 @@ module.exports = {
         }, over: '是否已完成'
     }
     , data: [{
+        name: '注销'
+        , info: '实现注销按钮'
+        , reference: []
+        , weights: 0
+        , complexity: 0
+        , over: false
+    }, {
         name: '代码预览'
         , info: '页面查看某个文件中代码，模拟IDE的分色'
         , reference: []
