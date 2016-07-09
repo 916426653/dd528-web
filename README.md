@@ -23,7 +23,7 @@
 * html5
 * nodeJS
 
-### 待开发技术模块清单，详见[public/static/future.json](./public/static/future.json)
+### 待开发技术模块清单，详见[public/static/future.js](./public/static/future.js)
 
 ## 8.License
 * MIT,具体License协议内容参见[LICENSE](./LICENSE)
