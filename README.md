@@ -9,6 +9,7 @@
 * 安装node、npm，cd到本项目路径下，执行(c)npm install
 * 使用node或者pm2、forever等启动器运行app.js
 * 使用浏览器访问[http://localhost:3000](http://localhost:3000)
+  * 生产环境可查看[sky91.cn](sky91.cn)  
 
 ## 2.项目结构
 ###### 为便于webstorm中使用、运营项目内代码，也便于阅读源码，将整体git库创建为单项目
